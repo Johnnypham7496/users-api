@@ -18,3 +18,12 @@ What is a api? - a way to automate request, how a computer communicates to anoth
 What is a virtual environment? - an area that yo can code freely without having the installed packages affect your computer. Ensuring that the code you have built with the packages/dependicies will run on someone elses computer just like it did with your own. 
 
 Why install Flask? - flask is a premade package that someone else has alreay made to help make creating the API process faster otherwise you would write the code from scratch which is too time consuming. 
+
+
+
+4 mjor calls in api
+    get- retrieve a record 
+    post - create a record 
+    put - modify record 
+    delete - deletes a record 
+
