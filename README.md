@@ -8,11 +8,12 @@ my **sample** flask api
 3. turn on virtual environment with `. venv/Scripts/activate`
 
 4. install flask with `pip install flask` 
-
-from here there should be a folder inside of the working directory with venv. To make sure the virtual environment is on --- `refer to step 3`, this implies everytime you close out of terminal meaning that you will need to always check for the `(venv)` at the bottom of the terminal to make sure that your VM is on
+from here there should be a folder inside of the working directory with venv. 
+To make sure the virtual environment is on --- `refer to step 3`, this implies everytime you close out of terminal meaning that you will need to always check for the `(venv)` at the bottom of the terminal to make sure that your VM is on
 
 5. `pip freeze > requirement.txt` - will create a requirements text that is installed from the packages and dependencies such as flask in this case
-if cloning repository already has requirement text then use - `pip install -r requirements.txt`
+This will also be the same command to update the requirements.txt when installing new packages
+`pip install -r requirements.txt` - use this command when cloning a repository with an existing requirements.txt
 
 6. added hello world code and run to test if the code runs
 
@@ -26,10 +27,10 @@ if cloning repository already has requirement text then use - `pip install -r re
 `Why install Flask?` - flask is a premade package that someone else has alreay made to help make creating the API process faster otherwise you would write the code from scratch which is too time consuming. 
 
 
-
 4 mjor calls in api
     `get`- retrieve a record <br>
     `post` - create a record <br>
     `put` - modify record <br>
     `delete` - deletes a record <br>
 
+    
