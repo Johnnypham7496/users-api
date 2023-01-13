@@ -27,10 +27,9 @@ This will also be the same command to update the requirements.txt when installin
 `Why install Flask?` - flask is a premade package that someone else has alreay made to help make creating the API process faster otherwise you would write the code from scratch which is too time consuming. 
 
 
-4 mjor calls in api
+4 major calls in api/HTTP method
     `get`- retrieve a record <br>
     `post` - create a record <br>
     `put` - modify record <br>
     `delete` - deletes a record <br>
 
-    
