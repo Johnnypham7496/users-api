@@ -1,4 +1,4 @@
-import unittest   # model testing framework this is helps CI test the code
+import unittest   # model testing framework this helps CI test the code
 
 
 class Apptest():
