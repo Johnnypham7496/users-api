@@ -9,6 +9,19 @@ servers:
   - url: "/api"
 
 
+components: 
+  schemas:
+    Person:
+      type: "object"
+      required: 
+        - lname
+      properties: 
+        fname:
+          type: "string"
+        lname:
+          type: "string"
+
+
 paths: 
   /people:
     get:
@@ -31,21 +44,7 @@ paths:
             application/json:
               schemas:
                 x-body-name: "person"
-                $ref: 'components/schemas/Person'
+                $ref: "#/components/schemas/Person"
       responses:
         "201":
           description: "Successfully created person"
-
-
-
-components: 
-  schemas:
-    Person:
-      type: "object"
-      required: 
-        - lname
-      properties: 
-        fname:
-          type: "string"
-        lname:
-          type: "string"
