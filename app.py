@@ -1,15 +1,14 @@
-from flask import Flask, Response
+from flask import render_template
+import connexion
 
-app = Flask(__name__)
+app = connexion.App(__name__, specification_dir= "./")
+app.add_api("swagger.yml")
 
 
-@app.route('/')
-def welcome():
-    response_text = '{"message": "Hello, welcome to Johnny\'s flask-api"}'
-    response = Response(response_text, 200, mimetype='applications/json')
-    return response
-
+@app.route("/")
+def home():
+    return render_template("home.html")
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000, debug=True)
+    app.run(host='localhost', port=8000, debug=True)
