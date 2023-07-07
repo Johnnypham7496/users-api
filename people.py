@@ -1,7 +1,8 @@
 # people.py
 
+from flask import abort, make_response
 from datetime import datetime
-from flask import abort
+
 
 
 
@@ -67,4 +68,16 @@ def update(lname, person):
     else:
         abort(
             404, f'Person with last name {lname} not found'
+        )
+
+
+def delete(lname):
+    if lname in PEOPLE:
+        del PEOPLE[lname]
+        return make_response(
+            f'{lname} successfully deleted', 200
+        )
+    else:
+        abort(
+            404, f'Person with name {lname} not found'
         )
