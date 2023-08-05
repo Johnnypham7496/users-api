@@ -24,7 +24,8 @@ def create(person):
 
         
 def read_all():
-    return list(PEOPLE.values())
+    people = Person.query.all()
+    return people_schema.dump(people)
 
 
 def read_one(lname):
