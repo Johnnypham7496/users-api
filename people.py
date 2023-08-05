@@ -7,15 +7,13 @@ from flask import abort, make_response
 
 def create(person):
     lname = person.get("lname")
-    fname = person.get("fname", "")
+    existing_person = Person.query.filter(Person.lname == lname).one_or_none()
 
-    if lname and lname not in PEOPLE:
-        PEOPLE[lname] = {
-            "lname": lname,
-            "fname": fname,
-            "timestamp": get_timestamp(),
-        }
-        return PEOPLE[lname], 201
+    if existing_person is None:
+        new_person = person_schema.load(person, session = db.session)
+        db.session.add(new_person)
+        db.session.commit()
+        return person_schema.dump(new_person), 201
     else:
         abort(
             406,
