@@ -2,5 +2,5 @@ language: python
 python: 
   - "3.10.9"
 
-  instal:
-    pip install virtualvenv
+install:
+  pip install virtualvenv
