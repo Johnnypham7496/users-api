@@ -19,4 +19,4 @@ class PersonSchema(ma.SQLAlchemySchema):
         sqla_session = db.session
 
 person_schema = PersonSchema()
-person_schema = PersonSchema(many=True)
+people_schema = PersonSchema(many=True)
