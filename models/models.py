@@ -12,7 +12,7 @@ class Person(db.Model):
     timestamp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 
-class PersonSchema(ma.SQLAlchemySchema):
+class PersonSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model= Person
         load_instance = True
