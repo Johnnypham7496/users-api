@@ -68,14 +68,3 @@ def delete(lname):
         )
 
 
-PEOPLE_NOTES = [
-    {
-        'lname': 'Fairy',
-        'fname': 'Tooth',
-        'notes': [            
-            ("I brush my teeth after each meal.", "2022-01-06 17:10:24"),
-            ("The other day a friend said I have big teeth.", "2022-03-05 22:17:54"),
-            ("Do you pay per gram?", "2022-03-05 22:18:10"),
-        ],
-    },
-]
