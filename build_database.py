@@ -1,6 +1,6 @@
 from datetime import datetime
 from config import app, db
-from models import Person, Note
+from models.models import Person, Note
 
 
 PEOPLE_NOTES = [
@@ -40,7 +40,7 @@ with app.app_context():
         for context, timestamp in data.get('notes', []):
             new_person.notes.append(
                 Note(
-                    content= content,
+                    content=content,
                     timestamp= datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S'),
                 )
             )
