@@ -117,3 +117,23 @@ paths:
       responses:
         "200":
           description: "Successfully read one note" 
+
+    put:
+      operationId: "notes.update_note"
+      tags:
+        - Notes
+      summary: "Update a note"
+      parameters:
+        - $ref: "#/components/parameters/note_id"
+      responses:
+          "200":
+            description: "Successfully updated a note"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "note"
+              type: "object"
+              properties:
+                content:
+                  type: "string"
