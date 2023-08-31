@@ -28,6 +28,13 @@ components:
       required: True
       schema:
         type: "string"
+    notes_id:
+      name: "notes_id"
+      description: "Id of the notes"
+      in: path
+      required: True
+      schema:   
+        type: "integer"
 
 
 paths: 
