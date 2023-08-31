@@ -47,6 +47,7 @@ paths:
       responses: 
         "200":
           description: "Successfully read people list"
+
     post: 
       operationId: "people.create"
       tags: 
@@ -63,6 +64,7 @@ paths:
       responses:
         "201":
           description: "Successfully created person"
+
   /people/{lname}:
     get:
       operationId: "people.read_one"
@@ -74,6 +76,7 @@ paths:
       responses:
         "200":
           description: "Successfully read person"
+
     put: 
       tags:
         - People
@@ -90,6 +93,7 @@ paths:
             schema:
               x-body-name: "person"
               $ref: "#/components/schemas/Person"
+              
     delete:
       tags:
         - People
@@ -100,6 +104,7 @@ paths:
       responses:
         "204":
           description: "Successfully deleted person"
+
   /notes/{note_id}:
     get:
       operationId: "notes.read_one"
