@@ -27,6 +27,13 @@ class Note(db.Model):
     timestamp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 
+class NoteSchema(ma.SQLAlchemyAutoSchema):
+    model = Note
+    load_instance = True
+    sql_sessoin = db.session
+    include_fk = True
+
+
 class PersonSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model= Person
@@ -34,5 +41,7 @@ class PersonSchema(ma.SQLAlchemyAutoSchema):
         sqla_session = db.session
         include_relationships = True
 
+
+note_schema = NoteSchema()
 person_schema = PersonSchema()
 people_schema = PersonSchema(many=True)
