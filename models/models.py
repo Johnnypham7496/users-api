@@ -2,6 +2,7 @@
 # User models are also known as user profiles, personas or archetypes
 from datetime import datetime
 from config import db, ma
+from marshmallow_sqlalchemy import fields
 
 
 class Person(db.Model):
@@ -28,10 +29,11 @@ class Note(db.Model):
 
 
 class NoteSchema(ma.SQLAlchemyAutoSchema):
-    model = Note
-    load_instance = True
-    sql_sessoin = db.session
-    include_fk = True
+    class Meta:
+        model = Note
+        load_instance = True
+        sql_sessoin = db.session
+        include_fk = True
 
 
 class PersonSchema(ma.SQLAlchemyAutoSchema):
@@ -40,6 +42,9 @@ class PersonSchema(ma.SQLAlchemyAutoSchema):
         load_instance = True
         sqla_session = db.session
         include_relationships = True
+
+    notes = fields.Nested(NoteSchema, many=True)
+
 
 
 note_schema = NoteSchema()
