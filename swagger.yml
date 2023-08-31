@@ -28,6 +28,7 @@ components:
       required: True
       schema:
         type: "string"
+
     note_id:
       name: "note_id"
       description: "Id of the notes"
@@ -112,7 +113,7 @@ paths:
         - Notes 
       summary: "Read one notes"
       parameters:
-        - $ref: '#/components/schemas/note_id'
+        - $ref: "#/components/parameters/note_id"
       responses:
         "200":
           description: "Successfully read one note" 
