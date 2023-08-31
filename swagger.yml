@@ -28,8 +28,8 @@ components:
       required: True
       schema:
         type: "string"
-    notes_id:
-      name: "notes_id"
+    note_id:
+      name: "note_id"
       description: "Id of the notes"
       in: path
       required: True
@@ -100,3 +100,14 @@ paths:
       responses:
         "204":
           description: "Successfully deleted person"
+  /notes/{note_id}:
+    get:
+      operationId: "notes.read_one"
+      tags:
+        - Notes 
+      summary: "Read one notes"
+      parameters:
+        - $ref: '#/components/schemas/note_id'
+      responses:
+        "200":
+          description: "Successfully read one note" 
