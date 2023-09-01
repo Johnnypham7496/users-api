@@ -147,4 +147,4 @@ paths:
         - $ref: "#/components/parameters/note_id"
       responses:
         "204":
-        description: "Successfully deleted note"
+          description: "Successfully deleted note"
