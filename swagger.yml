@@ -109,7 +109,7 @@ paths:
 
   /notes:
     post: 
-      operationId: "notes.create"
+      operationId: "notes.create_note"
       tags: 
         - Notes 
       summary: "Create a note associated with a person"
