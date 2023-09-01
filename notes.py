@@ -24,3 +24,17 @@ def update_note(note_id, note):
         db.session.merge(existing_note)
         db.session.commit()
         return note_schema.dump(existing_note), 201
+
+
+def delete_note(note_id):
+    existing_note = Note.query.get(note_id)
+
+    if existing_note:
+        db.session.delete(existing_note)
+        db.session.commit()
+        return make_response(f'{note_id} successfully deleted', 204)
+    
+    else:
+        abort(
+            404, f'Note with ID {note_id} not found'
+        )
