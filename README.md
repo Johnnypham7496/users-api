@@ -33,3 +33,10 @@ This will also be the same command to update the requirements.txt when installin
     `put` - modify record <br>
     `delete` - deletes a record <br>
 
+
+
+To run the application use: 
+    python app.py
+
+
+To go to the swagger page use: http://localhost:8000/api/ui
